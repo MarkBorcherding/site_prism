@@ -31,4 +31,11 @@ class TestHomePage < SitePrism::Page
   # iframes
   iframe :my_iframe, MyIframe, '#the_iframe'
   iframe :index_iframe, MyIframe, 0
+
+  # elements via text
+  element :nested_input, :field, 'With a field inside'
+  element :label_for_input, :field, 'Using for attribute'
+  element :submit_button, :button, 'submit it'
+  element :search_link, :link, 'Search Page'
+
 end

@@ -362,6 +362,30 @@ Here we're adding a search field to the Home page. The `element` method
 takes 2 arguments: the name of the element as a symbol, and a css selector
 as a string.
 
+#### Finding elements via text
+
+An element can be found via its name, id, text, label text, or value, depending
+on the type of element.
+
+```ruby
+class Login < SitePrism::Page
+  element :email, :field, "Email Address"
+  element :login_button, :button, "Login"
+  element :forgot_password_link, :link, "Forgot your password?"
+end
+```
+
+Elements will match against a substring of text, unless the `exact: true`
+option is passed. For example, the following two will find `"First Name"`, but
+only the first element will find `"My First Pet"`.
+
+```ruby
+class Example < SitePrism::Page
+  element :first_name, :field, "First"
+  element :first_name_exact, :field, "First Name", exact: true
+end
+```
+
 #### Accessing the individual element
 
 The `element` method will add a number of methods to instances of the

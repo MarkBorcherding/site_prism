@@ -145,3 +145,20 @@ Then(/^I can wait a variable time and pass specific parameters$/) do
     expect(@test_site.home.wait_for_lots_of_links(nil, count: 198_108_14)).to be false
   end
 end
+
+
+Then(/^I can find an input nested inside a label$/) do
+  expect(@test_site.home).to have_nested_input
+end
+
+Then(/^I can find an input using a label's for attribute$/) do
+  expect(@test_site.home).to have_label_for_input
+end
+
+Then(/^I can find a button using its text$/) do
+  expect(@test_site.home).to have_submit_button
+end
+
+Then(/^I can find a link using its text$/) do
+  expect(@test_site.home).to have_search_link
+end

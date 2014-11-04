@@ -26,6 +26,14 @@ Feature: Page element interaction
     But I cannot see the missing squirrel
     And I cannot see the missing other thingy
 
+  Scenario: Get elements using their text
+    When I navigate to the home page
+    Then I can find an input nested inside a label
+    And I can find an input using a label's for attribute
+    And I can find a button using its text
+    And I can find a link using its text
+
+
   Scenario: Get individual elements with query options
     When I navigate to the home page
     Then the welcome header is not matched with invalid text
