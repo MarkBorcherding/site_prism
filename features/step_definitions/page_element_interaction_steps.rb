@@ -146,7 +146,6 @@ Then(/^I can wait a variable time and pass specific parameters$/) do
   end
 end
 
-
 Then(/^I can find an input nested inside a label$/) do
   expect(@test_site.home).to have_nested_input
 end

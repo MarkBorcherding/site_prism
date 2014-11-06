@@ -37,5 +37,4 @@ class TestHomePage < SitePrism::Page
   element :label_for_input, :field, 'Using for attribute'
   element :submit_button, :button, 'submit it'
   element :search_link, :link, 'Search Page'
-
 end
